@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<div class="console">
+    <ul>
+        <li><a class="ps3-logo" href=""><img src="{% static 'img/ps3.png'%}" alt=""></a></li>
+        <li><a class="ps4-logo" href=""><img src="{% static 'img/PS4_logo.png' %}" alt=""></a></li>
+    </ul>
+</div>
+{% for product in products %}
+<article>
+    <img class="game-presentation" src="{{ product.image.url }}" alt="">
+    <div class="container-name">
+      <span>{{product.name}}</span>
+      <hr>
+      <p>{{ product.type_game }}</p>
+    </div>
+    <p><span>Precio:</span> {{product.price}}<span>Bsf<span></p>
+    <a href="{% url 'products:detail' pk=product.pk %}" class="button">Detalles</a>
+    <a href="carrito" class=button>Agregar al Carrito</a>
+</article>
+{% endfor %}
+{% endblock %}
+
+
+
+        
+   

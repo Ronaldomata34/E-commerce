@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> 
+    <title>{% block title_page %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container-header">
+        <div class="header">
+            <div class="logo">
+                <figure>
+                    <a href=""><img class="page-logo"src="{% static 'img/logo_white.jpg' %}" alt="Logo PlayStation"></a>
+                </figure>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a class="menu" href="/home">Inicio</a></li>
+                    <li>
+                        <a class="menu" href="/games">Catalogo</a>
+                        {% comment %} <ul>
+                            <li><a class="sub-menu" href="">Ps3</a></li>
+                            <li><a class="sub-menu" href="">Ps4</a></li>
+                        </ul> {% endcomment %}
+                    </li>
+                    <li><a class="menu" href="">Cuentas Bancarias</a></li>
+                    <li><a class="menu" href="">Información</a></li>
+                    <li><a class="menu" href="">Ayuda</a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    <div class="container-main-img">
+        <img class="main-img" src="{% static 'img/fifa18.jpg' %}" alt="">
+    </div>
+    <div class="about-us">
+        <p>Somos expecialitas en venta de juegos digitales para Ps3 y Ps4, recomendado por todos...</p>
+    </div>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+    
+    <footer>    
+        © Ps3Maracaibo 2017, Juegos Ps3, Ps4
+        <br/>
+        todos los derechos reservados        
+    </footer>
+</body>
+</html>

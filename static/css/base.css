@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    font-family: 'Encode Sans', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    background: #312F2F;
+    
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+span {
+    font-weight: 800;
+}
+
+.container article {
+    margin-top: 20px;
+    margin-right: 20px;
+    background: #484848;
+    max-width: 180px;
+    text-align: center;
+    border-radius: 30px 0 0;
+    color: white;
+}
+
+.container article img {
+    max-width: 180px;
+    height: 180px;
+}
+
+.button {
+    width: 160px;
+    background: #43C6ED;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.button:hover {
+    background: #2C8CA9;
+}
+
+.game-presentation {
+    border-radius: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+footer {
+    background: black;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.container-header {
+    background: black;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 120px;
+    padding-left: 60px;
+    padding-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #312F2F;
+    justify-content: flex-start;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.main-img {
+    height: 400px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.container-main-img {
+    height: 460px;
+}
+
+.header ul li .menu {
+    text-decoration: none;
+    color: white;
+    height: inherit;
+    line-height: 60px;
+    display: inline-block;
+    border-left: 1px solid white;
+    padding: 0 20px;
+}
+
+.header ul li .menu:hover {
+    background: #66C7DB;
+}
+
+.console {
+    width: 980px;
+    background: #7D7979;
+    color: white;
+    height: 47px;
+    border-radius: 10px;
+}
+
+.console ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.console ul li {
+    list-style: none;
+    width: 490px;
+    text-align: center;
+}
+
+.console ul li a {
+    line-height: 35px;
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    padding-top: 10px;
+    
+}
+
+.console ul li a:hover {
+    background: #66C7DB;
+}
+
+.console ul li a img {
+    height: 25px;
+    width: 100px;
+}
+
+.about-us {
+    height: 30px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.about-us p {
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.ps3-logo {
+    border-right: 1px solid black;
+    border-radius: 10px 0 0 10px;
+}
+
+.ps4-logo {
+    border-left: 1px solid black;
+    border-radius: 0 10px 10px 0;
+}
+
+
+.header ul {
+    margin: 0;
+    display: flex;
+    height: inherit
+}
+
+.header ul li {
+    list-style: none;
+    height: inherit;
+}
+
+.header figure {
+    margin: 0;
+    height: inherit;
+}
+
+.page-logo {
+    width: 100px;
+    height: inherit;
+}
+
+.nav {
+    height: inherit;
+}
+
+.header {
+    margin: 0 auto;
+    display: flex;
+    height: 60px;
+    width: 900px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+
+
