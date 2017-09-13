@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
+    {% load staticfiles %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">   
     <title>{% block title_page %}{% endblock %}</title>
 </head>
 <body>
@@ -17,17 +17,18 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a class="menu" href="/home">Inicio</a></li>
+                    <li><a class="menu" href="/">Inicio</a></li>
                     <li>
-                        <a class="menu" href="/games">Catalogo</a>
-                        {% comment %} <ul>
-                            <li><a class="sub-menu" href="">Ps3</a></li>
-                            <li><a class="sub-menu" href="">Ps4</a></li>
-                        </ul> {% endcomment %}
+                        <a class="menu" href="/games/ps3">Catalogo</a>
+                        <ul>
+                            <li><a class="submenu" href="{% url 'products:list_filter' 'ps3' %}">Ps3</a></li>
+                            <li><a class="submenu" href="{% url 'products:list_filter' 'ps4' %}">Ps4</a></li>
+                        </ul> 
                     </li>
                     <li><a class="menu" href="">Cuentas Bancarias</a></li>
-                    <li><a class="menu" href="">Información</a></li>
+                    <li><a class="menu" href="/#information">Información</a></li>
                     <li><a class="menu" href="">Ayuda</a></li>
+                    
                 </ul>
             </div>
         </div> 
@@ -38,14 +39,16 @@
     <div class="about-us">
         <p>Somos expecialitas en venta de juegos digitales para Ps3 y Ps4, recomendado por todos...</p>
     </div>
-    <div class="container">
+
+    <div class="section-all">
         {% block content %}
-        
+            {% comment %} games.html {% endcomment %}
         {% endblock %}
     </div>
     
+    
     <footer>    
-        © Ps3Maracaibo 2017, Juegos Ps3, Ps4
+        © ShopPs3 2017, Juegos Ps3, Ps4
         <br/>
         todos los derechos reservados        
     </footer>

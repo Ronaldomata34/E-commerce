@@ -1,10 +1,14 @@
 body {
     margin: 0;
-    font-family: 'Encode Sans', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
     min-height: 100vh;
     background: #312F2F;
     
+}
+
+h4 {
+    margin: 0;
 }
 
 a {
@@ -14,40 +18,6 @@ a {
 
 span {
     font-weight: 800;
-}
-
-.container article {
-    margin-top: 20px;
-    margin-right: 20px;
-    background: #484848;
-    max-width: 180px;
-    text-align: center;
-    border-radius: 30px 0 0;
-    color: white;
-}
-
-.container article img {
-    max-width: 180px;
-    height: 180px;
-}
-
-.button {
-    width: 160px;
-    background: #43C6ED;
-    font-weight: 700;
-    font-size: 14px;
-    display: inline-block;
-    padding: 10px 0;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-.button:hover {
-    background: #2C8CA9;
-}
-
-.game-presentation {
-    border-radius: inherit;
 }
 
 p {
@@ -66,6 +36,98 @@ footer {
     overflow-x: hidden;
 }
 
+.submenu {
+    background: white;
+    opacity: .5;
+    display: inline-block;
+    font-weight: 400;
+    width: 100px;
+    height: 25px;
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+.submenu:hover {
+    background: #43C6ED;
+    opacity: 1;
+}
+
+.container article {
+    margin-top: 20px;
+    margin-right: 20px;
+    background: #484848;
+    max-width: 180px;
+    text-align: center;
+    border-radius: 30px 0 0;
+    color: white;
+}
+
+.container article img {
+    max-width: 180px;
+    height: 180px;
+}
+
+.category {
+    text-align: center;
+    color: white;
+    padding-top: 75px;
+    text-decoration: none;
+    width: 220px;
+}
+
+.title {
+    width: 980px;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.category ul li {
+    list-style: none;
+    height: 30px;
+    border-radius: 10px 0;
+    width: inherit;
+}
+
+.category ul li a {
+    height: inherit;
+    display: inline-block;
+    width: inherit;
+    line-height: 30px;
+    font-weight: 800;
+}
+
+.category ul {
+    padding: 0 40px;
+    width: 130px;
+}
+
+.button {
+    width: 160px;
+    background: #43C6ED;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.button:hover {
+    background: #2C8CA9;
+}
+
+.game-presentation {
+    border-radius: inherit;
+}
+
+
+
 .container-header {
     background: black;
     position: fixed;
@@ -73,20 +135,41 @@ footer {
     left: 0;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 120px;
-    padding-left: 60px;
-    padding-right: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    background: #312F2F;
-    justify-content: flex-start;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+.information {
+    width: 980px;
+    color: white;
 }
+
+.container {
+	width: 1000px;
+	margin: 0;
+    display: flex;
+    border-bottom: 6px solid white;
+	flex-wrap: wrap;
+	background: #312F2F;
+	padding-top: 15px;
+	padding-bottom: 120px;
+	padding-left: 60px;
+	padding-right: 40px;
+	justify-content: flex-start;
+}
+
+.selected {
+    background-color: #43C6ED; 
+}
+    
+.section-all {
+	max-width: 1325px;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom: 120px;
+	padding-left: 0px;
+	padding-right: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
 
 .main-img {
     height: 400px;
@@ -113,7 +196,7 @@ footer {
 }
 
 .console {
-    width: 980px;
+    max-width: 980px;
     background: #7D7979;
     color: white;
     height: 47px;
@@ -123,6 +206,7 @@ footer {
 .console ul {
     display: flex;
     align-items: center;
+    width: 980px;
     justify-content: space-between;
     margin: 0;
     padding: 0;
@@ -144,7 +228,7 @@ footer {
 }
 
 .console ul li a:hover {
-    background: #66C7DB;
+    background: white;
 }
 
 .console ul li a img {
@@ -211,5 +295,88 @@ footer {
 
 }
 
+.container-cart {
+    background: rgb(101, 120, 106);
+    padding: 10px;
+    border-radius: 50px 0 ;
+    border: 1px solid white;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
 
+.nav ul li ul {
+    display:none;
+    position:absolute;
+    padding-left: 4px;
+    min-width:140px;
+}
 
+.nav ul li:hover > ul {
+    display:block;
+}
+
+.nav ul li ul li {
+    position:relative;
+    height: 35px;
+}
+
+table {
+    width:100%;
+    margin: 0 auto;
+    border-spacing:0;
+    border-collapse: collapse;
+    background: #BDBEC0;
+    width: 1000px;
+}
+
+table th, table td {
+    text-align:center;
+    font-size:14px;
+    padding:10px;
+    margin:0;
+}
+
+tbody tr:nth-child(odd) {
+    background:#efefef;
+    border-bottom: 1px solid black;
+}
+
+tbody tr.subtotal {
+    background:green;
+}
+
+thead th, tbody tr.total {
+    background:#484848C5;
+    color:#fff;
+    font-weight:bold;
+}
+
+table.cart {
+    margin-bottom:40px;
+}
+
+table.cart img {
+    width:180px;
+    height: 180px;
+}
+
+tbody td.num {
+    text-align:center;
+}
+
+td input[type="submit"] {
+    font-size:12px;
+    padding:4px 10px;
+}
+
+.product-detail {
+    width: 1000px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.product-detail img {
+    width: 300px;
+    height: 300px;
+}

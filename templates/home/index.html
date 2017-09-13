@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+<div class="container">
+    <h1 class="title">Lo Más Nuevo</h1>
+    {% for product in products %}
+        <article>
+            <img class="game-presentation" src="{{ product.image.url }}" alt="">
+            <div class="container-name">
+            <span>{{product.name}}</span>
+            <hr>
+            <p>{{ product.typeofgame }} | <strong>{{ product.platform }}</strong></p>
+            </div>
+            <p><span>Precio:</span> {{product.price}}<span>Bsf<span></p>
+            <a href= "{{ product.get_absolute_url }}" class="button">Detalles</a>
+            <a href="carrito" class=button>Agregar al Carrito</a>
+        </article>
+    {% endfor %} 
+</div>
+<div class="information" id="information">
+    <h1 class="title">¿Qué es un Juego digital?</h1>
+    <p>Son juegos comprados mediante la PlayStation Store, son descargados y guardados en el disco duro del PlayStation 3, un juego digital contiene el juego COMPLETO, viene con su pase online y se puede jugar online sin ningún problema, no afecta en los gráficos ni calidad de juego.</p>
+    <h1 class="title">Ventajas y Desventajas</h1>
+    <h3>Ventajas</h3>
+    <ul>
+        <li>Primera y mas importante ventaja: Precio mucho mas accesible que el de un "Juego en físico".</li>
+        <li>Alarga la vida del lector de tu ps3 (El juego es leido desde el disco duro)</li>
+        <li>Es idéntico en cuanto a funcionalidad a un juego en físico (juego full/completo, juego online)</li>
+        <li>Rápido acceso a juegos recién estrenados,no requiere envíos internacionales.
+        </li>
+        <li>Se mejora el tiempo entre carga de mapas , niveles, entre otras cosas (debido a que es leído desde el disco duro)</li>
+    </ul>
+    <h3>Desventajas</h3>
+    <ul>
+        <li>No tendrás el juego en tus manos (caja, estuche, manuales)</li>
+        <li>El juego comprado solo puedes descargarlo en una sola consola, una sola vez.</li>
+        <li>En caso de formatear/restaurar o dañarse ficheros en el disco duro (muy mala suerte) , se perderían todos los juegos, y tendrías que volver a comprar el cupo para descargar cada juego.</li>
+        <li>No se recomienda intercambiar el disco duro del ps3, ya que al desconectarlo, existe una alta posibilidad que se pierda la licencia de los juegos digitales que estén instalados.</li>
+    </ul>
+</div>
 {% endblock %}

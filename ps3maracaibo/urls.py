@@ -22,5 +22,9 @@ from products import models
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('products.urls', namespace="products")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^carrito/', include('cart.urls', namespace='cart')),
+    url(r'^', include('products.urls', namespace='products')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

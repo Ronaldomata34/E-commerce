@@ -1,28 +1,80 @@
 {% extends 'base.html' %}
 
+{% block category %}
+<ul>
+    {% for category in categories %}
+        <li><a href="">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
 
 {% block content %}
 {% load static %}
-<div class="console">
-    <ul>
-        <li><a class="ps3-logo" href=""><img src="{% static 'img/ps3.png'%}" alt=""></a></li>
-        <li><a class="ps4-logo" href=""><img src="{% static 'img/PS4_logo.png' %}" alt=""></a></li>
-    </ul>
-</div>
-{% for product in products %}
-<article>
-    <img class="game-presentation" src="{{ product.image.url }}" alt="">
-    <div class="container-name">
-      <span>{{product.name}}</span>
-      <hr>
-      <p>{{ product.type_game }}</p>
+<div class="category" >
+    <div class="container-cart">
+        <a href="{% url 'cart:cart_detail' %}"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></a></i>
+        <br>
+        {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+                <h4>Tu carrito de compras:</h4> 
+                <a href="{% url "cart:cart_detail" %}">
+                    <p>{{ total_items }} item{{ total_items|pluralize }} <br> {{ cart.get_total_price }}<strong>Bsf</strong></p>
+                </a>
+            {% else %}
+                <h4>Vacio</h4>
+            {% endif %}
+        {% endwith %}
     </div>
-    <p><span>Precio:</span> {{product.price}}<span>Bsf<span></p>
-    <a href="{% url 'products:detail' pk=product.pk %}" class="button">Detalles</a>
-    <a href="carrito" class=button>Agregar al Carrito</a>
-</article>
-{% endfor %}
+    <h3>Categories</h3>
+        <ul>
+            <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url 'products:list_filter' 'ps3' %}">All</a>
+            </li>          
+        {% for c in categories %}
+            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                <a href="{% url 'products:list_filter' category_slug=c.slug platform_slug=platform.slug %}">{{ c.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+</div>
+
+
+
+<div class="container">
+    <div class="console">
+        <ul>
+            {% for console in platforms %}
+            <li>
+                <a class="{{console.name}}-logo {% if platform.slug == console.slug %} selected {% endif %}" href="{% url 'products:list_filter' console.slug  %}">
+                    {% if console.slug == 'ps3' %}
+                    <img src="{% static 'img/ps3.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'img/ps4.png' %}" alt="">
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% for product in games %}
+    <article>
+        <img class="game-presentation" src="{{ product.image.url }}" alt="">
+        <div class="container-name">
+        <span>{{product.name}}</span>
+        <hr>
+        <p>{{ product.typeofgame }} | <strong>{{ product.platform }}</strong></p>
+        </div>
+        <p><span>Precio:</span> {{product.price}}<span>Bsf<span></p>
+        <a href="{{product.get_absolute_url}}" class="button">Detalles</a>
+        <a href="carrito" class=button>Agregar al Carrito</a>
+    </article>
+    {% endfor %}
+</div>
+
 {% endblock %}
+
 
 
 
