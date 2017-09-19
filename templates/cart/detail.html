@@ -32,11 +32,11 @@
                     <form action="{% url "cart:cart_add" product.id %}" method="post">
                         {{ item.update_quantity_form.quantity }}
                         {{ item.update_quantity_form.update }}
-                        <input type="submit" value="Actualizar">
+                        <input class="update-button" type="submit" value="Actualizar">
                         {% csrf_token %}
                     </form>
                 </td>
-                <td><a href="{% url "cart:cart_remove" product.id %}">Eliminar</a></td>
+                <td><a class="delete-button" href="{% url "cart:cart_remove" product.id %}">Eliminar</a></td>
                 <td class="num">{{ item.price }}Bsf</td>
                 <td class="num">{{ item.total_price }}Bsf</td>
             </tr>
