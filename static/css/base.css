@@ -58,15 +58,21 @@ footer {
     margin-top: 20px;
     margin-right: 20px;
     background: #484848;
-    max-width: 180px;
+    max-width: 172px;
     text-align: center;
     border-radius: 30px 0 0;
     color: white;
+    border: 4px solid white;
+}
+
+.container article .container-name {
+    height: 50px;
 }
 
 .container article img {
-    max-width: 180px;
+    max-width: inherit;
     height: 180px;
+    margin-bottom: 5px;
 }
 
 .category {
@@ -106,9 +112,10 @@ footer {
     width: 130px;
 }
 
-.button {
+.button, .add-cart-button {
     width: 160px;
     background: #43C6ED;
+    color: white;
     font-weight: 700;
     font-size: 14px;
     display: inline-block;
@@ -116,10 +123,12 @@ footer {
     border-radius: 10px;
     margin: 5px;
     text-align: center;
+    border: 1px solid white;
 }
 
-.button:hover {
+.button:hover, .add-cart-button:hover {
     background: #2C8CA9;
+    transform: scale(1.05)
 }
 
 .game-presentation {
@@ -337,9 +346,11 @@ table th, table td {
     margin:0;
 }
 
-tbody tr:nth-child(odd) {
-    background:#efefef;
-    border-bottom: 1px solid black;
+
+
+tbody tr:nth-child(2n+1) {
+	background: #848383;
+	border-bottom: 1px solid black;
 }
 
 tbody tr.subtotal {
@@ -370,13 +381,84 @@ td input[type="submit"] {
     padding:4px 10px;
 }
 
-.product-detail {
-    width: 1000px;
-    display: flex;
+.information-product {
+    width: 1100px;
+    overflow: hidden;
     margin-top: 40px;
+    background: #171616;
+    padding: 40px;
+    color: white;
 }
 
-.product-detail img {
-    width: 300px;
-    height: 300px;
+.information-product .info-game {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #25283A;
+    border: 5px solid black;
 }
+
+.information-product .info-game img {
+    width: inherit;
+    height: inherit;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.information-product h1 {
+    margin: 0;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #18A1E8
+}
+
+.information-product h2,h4 {
+    margin: 0;
+    margin-bottom: .5em;
+}
+
+.platform-title {
+    background: black;
+    margin: 0;
+    padding: .5em;
+}
+
+.information-product div {
+    float: right;
+    top: 0;
+}
+
+.information-product p {
+    margin: 10px 0;
+}
+
+.add-cart form select, .add-cart-detail {
+    margin-left: 5px;
+    background: black;
+    border: none;
+    padding: 8px 10px;
+    color: white;
+    font-weight: 800;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.info-game h4 {
+    font-weight: normal;
+}
+
+.add-cart form select:hover, .add-cart-detail:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+table a {
+    color: black;
+}
+
+

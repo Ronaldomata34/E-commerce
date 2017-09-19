@@ -62,13 +62,18 @@
     <article>
         <img class="game-presentation" src="{{ product.image.url }}" alt="">
         <div class="container-name">
-        <span>{{product.name}}</span>
+            <span>{{product.name}}</span>
+        </div>
         <hr>
         <p>{{ product.typeofgame }} | <strong>{{ product.platform }}</strong></p>
-        </div>
         <p><span>Precio:</span> {{product.price}}<span>Bsf<span></p>
         <a href="{{product.get_absolute_url}}" class="button">Detalles</a>
-        <a href="carrito" class=button>Agregar al Carrito</a>
+        <form action="{% url "cart:cart_add" product_id=product.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="hidden" value="1" name="quantity">
+            <input class="add-cart-button" type="submit" value="Agregar al Carrito">
+        </form>
     </article>
     {% endfor %}
 </div>

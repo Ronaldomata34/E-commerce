@@ -25,7 +25,7 @@ class ProductList(ListView):
         elif platform_slug:
             self.platform = get_object_or_404(Platform, slug=platform_slug)
             products_list = products_list.filter(platform=self.platform)
-        return products_list
+        return products_list.order_by('name')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -3,18 +3,23 @@
 {% load static %}
 {% block content %}
 <div class="product-detail">
-    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
     <div class="information-product">
+        <div class="info-game">
+            <h3 class="platform-title">{{product.platform | capfirst }}  </h3>
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+            <h4><span>Tipo de juego: <br></span>{{ product.typeofgame }}</h4>
+            <h4><span>Genero: <br></span><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h4>
+            <h4 class="price"><span>Precio: <br></span>${{ product.price }}</h4>
+        </div>
         <h1>{{ product.name }}</h1>
-        <h4>{{ product.typeofgame }}</h4>
-        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-        <p class="price">${{ product.price }}</p>
-        <form action="{% url "cart:cart_add" product.id %}" method="post">
-            {{ cart_product_form }}
-            {% csrf_token %}
-            <input type="submit" value="Add to cart">
-        </form>
-        {{ product.description|linebreaks }}
+        <div class="add-cart">
+                <form action="{% url "cart:cart_add" product.id %}" method="post">
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                    <input class="add-cart-detail" type="submit" value="Agregar al Carrito">
+                </form>
+        </div>      
+        <p>{{ product.description|linebreaks }}</p>    
     </div>
 </div>
 {% endblock %}
